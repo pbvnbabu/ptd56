@@ -4,7 +4,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
 from model import StudentNet
 from train import train_model
-
+###New comment
 df = pd.read_csv("student_data.csv")
 X = df.drop("label", axis=1).values
 y = df["label"].values
@@ -24,3 +24,6 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 criterion = torch.nn.CrossEntropyLoss()
 
 train_model(model, train_loader, val_loader, optimizer, criterion)
+
+#model deployed here ==>
+# https://ptd56deploy.streamlit.app/
